@@ -1,17 +1,17 @@
 var apiKey = require('./../.env').apiKey;
 
-function NBA() {
+function Team() {
 }
 
-NBA.prototype.getTeams = function(displayTeams) {
+Team.prototype.getPlayers = function(key, displayPlayers) {
   $.get({
     type : "GET",
-    url : "https://api.fantasydata.net/v3/nba/stats/json/AllTeams",
+    url : "https://api.fantasydata.net/v3/nba/stats/json/Players/" + key,
     beforeSend : function(xhr){xhr.setRequestHeader('Ocp-Apim-Subscription-Key', apiKey);},
     success : function(result) {
-      console.log(result);
-      var teams = result;
-      displayTeams(teams);
+      console.log(result + "??");
+      var players = result;
+      displayPlayers(players);
     },
     error : function(result) {
       $('#teams').text(error.responseJSON.message);
@@ -19,4 +19,4 @@ NBA.prototype.getTeams = function(displayTeams) {
   });
 };
 
-exports.NBAModule = NBA;
+exports.TeamModule = Team;
