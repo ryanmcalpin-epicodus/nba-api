@@ -24,6 +24,6 @@ var displayTeams = function(teams) {
 var displayPlayers = function(players) {
   console.log("list of players: " + players);
   players.forEach(function(player) {
-    $('#teams').append("<li>" + player.YahooName + "</li>");
+    $('#teams').append("<li><img src='" + player.PhotoUrl + "'></img> " + player.Position + ", #" + player.Jersey + " " + player.YahooName + "</li>");
   });
 };
