@@ -9,6 +9,10 @@ $(document).ready(function() {
 
 var displayTeams = function(teams) {
   teams.forEach(function(team) {
-    $('#teams').append("<li style='color:#" + team.PrimaryColor +  "; background-color:#" + team.SecondaryColor + "; text-shadow: 3px 2px #" + team.TertiaryColor + ";' class='" + team.TeamID + "'>" + team.City + " " + team.Name + "</li>");
+    $('#teams').append("<li style='color:#" + team.PrimaryColor +  "; background-color:#" + team.SecondaryColor + "; text-shadow: 3px 2px #" + team.TertiaryColor + ";'><span class='team' id='" + team.TeamID + "'>" + team.City + " " + team.Name + "</span></li>");
+
+    $('.team').last().click(function() {
+      $('#team-info').text(this.id);
+    });
   });
 }
