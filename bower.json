@@ -1,12 +1,14 @@
 {
   "name": "nba-api",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "authors": [
+    "Ryan McAlpin <rhmcalpin@gmail.com>"
+  ],
   "license": "ISC",
-  "moduleType": [],
   "homepage": "",
   "ignore": [
-    "*/.",
+    "**/.*",
     "node_modules",
     "bower_components",
     "test",
